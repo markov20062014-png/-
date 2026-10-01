@@ -1,0 +1,285 @@
+/* ================= ОСНОВА ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+
+    /* Шрифт */
+    font-family: Arial, sans-serif;
+    
+}
+
+
+/* ================= HEADER ================= */
+
+header {       
+ background-color: #1a1a1a;
+border-bottom: 2px solid #e50914;
+    padding: 20px 50px;
+
+    /* Логотип і меню в один ряд */
+    display: flex;
+
+    /* Логотип зліва, меню справа */
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+header h2 {
+    color: #e50914
+}
+
+
+/* Меню */
+
+nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    margin-left: 20px;
+}
+
+
+/* Наведення на меню */
+
+nav a:hover {
+    color: #e50914;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    text-align: center;
+
+    padding: 100px 20px;
+
+    /* Чорний фон */
+    background-color: black;
+
+    /* Білий текст */
+    color: white;
+}
+
+
+.hero h1 {
+    font-size: 48px;
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    font-size: 20px;
+
+    max-width: 600px;
+
+    /* Центруємо текст */
+    margin: 0 auto 30px;
+}
+
+
+/* ================= КНОПКА ================= */
+
+.button {
+    display: inline-block;
+
+    background-color: #e50914;
+
+    color: #ffffff;
+
+    padding: 12px 24px;
+
+    text-decoration: none;
+
+   border-radius: 5px;
+}
+
+
+.button:hover {
+    background-color: #dddddd;
+    transition: 0.5s;
+}
+
+
+/* ================= CONTENT ================= */
+
+main {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 60px 20px;
+}
+
+
+main > h1,
+main > h2 {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+/* ================= КАРТКИ ================= */
+
+.cards {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Одна картка */
+
+.card {
+
+    background-color: #1e1e1e;
+
+    padding: 20px;
+
+   border: 1px solid #2a2a2a;
+
+   border-radius: 8px;
+    /* Картки рівномірно розподіляються */
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    animation: appear 1s ease;
+}
+
+
+
+/* Фото */
+
+.card img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    /* Робимо фото чорно-білим */
+    
+}
+
+.card:hoover{
+    border-color: #e50914;
+}
+.card h3 {
+    margin-top: 20px;
+}
+
+
+/* ================= ПРО МЕНЕ ================= */
+
+/* 4 картки в одному рядку */
+
+.about-cards .card {
+    flex: 0 0 calc(25% - 15px);
+}
+
+
+/* ================= CONTACTS ================= */
+
+.contact-box {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    border: 2px solid black;
+
+    border-radius: 12px;
+}
+
+
+.contact-box p {
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+.contact-box a {
+    color: black;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: black;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+footer a {
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 5px;
+}
+
+
+/* ================= ТЕЛЕФОН ================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+        margin: 0 8px;
+    }
+
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .card,
+    .about-cards .card {
+        flex: 0 0 100%;
+    }
+
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
